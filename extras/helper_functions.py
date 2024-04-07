@@ -304,6 +304,9 @@ def view_random_image(target_dir, target_class):
   print(f"Image shape{img.shape}") #show the shape of the image
   return img
 
+  
+  # Function to evaluate: accuracy, precision, recall, f1-score
+  from sklearn.metrics import accuracy_score, precision_recall_fscore_support
   def calculate_results(y_true, y_pred):
   """
   Calculate model accuracy, precision, recall and f1 score of a  binary classification model
