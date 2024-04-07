@@ -302,7 +302,7 @@ def view_random_image(target_dir, target_class):
   plt.title(target_class)
   plt.axis("off");
   print(f"Image shape{img.shape}") #show the shape of the image
-
+  return img
 
   def calculate_results(y_true, y_pred):
   """
@@ -318,5 +318,3 @@ def view_random_image(target_dir, target_class):
                    "F1": model_f1
                    }
   return model_results
-
-  return img
