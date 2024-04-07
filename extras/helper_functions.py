@@ -303,4 +303,20 @@ def view_random_image(target_dir, target_class):
   plt.axis("off");
   print(f"Image shape{img.shape}") #show the shape of the image
 
+
+  def calculate_results(y_true, y_pred):
+  """
+  Calculate model accuracy, precision, recall and f1 score of a  binary classification model
+  """
+  # Calculate model accuracy
+  model_accuracy = accuracy_score(y_true, y_pred) * 100
+  # Calculate model precision, recall, and F1-score
+  model_precision, model_recall, model_f1, _ = precision_recall_fscore_support(y_true, y_pred, average="weighted")
+  model_results = {"Accuracy": model_accuracy,
+                  "Precision": model_precision,
+                  "Recall": model_recall,
+                   "F1": model_f1
+                   }
+  return model_results
+
   return img
